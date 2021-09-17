@@ -1,0 +1,14 @@
+.picture-like-container{
+    width: 200px;
+}
+
+.image-div{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+img{
+    width: 100px;
+}

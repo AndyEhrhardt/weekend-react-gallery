@@ -6,28 +6,28 @@ import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
   let [pictures, setPictures] = useState([]);
-  const getPictures= () => {
+
+  useEffect(() => {
+    getPictures()
+  }, [])
+
+  const getPictures = () => {
     axios.get('/gallery')
       .then(response => {
-        setPictures(response.data)
+        setPictures(response.data);
       })
       .catch(err => {
         alert('error getting pictures');
         console.log(err);
       })
   }
-  useEffect(() => {
-    getPictures()
-  }, [])
-  console.log(pictures);
-  const [likes, setLikes] = useState(0);
+  
+  
   const addLike = (picId) => {
-    console.log('in add like id is: ', picId);
     axios.put(`/gallery/${picId}`)
     .then(response => {
-      console.log(response)
-      getPictures
-    })
+      getPictures();
+   })
     .catch(err => {
       alert('error adding like');
       console.log(err);

@@ -1,11 +1,11 @@
 import GalleryItem from '../GalleryItem/GalleryItem'
+import './GalleryList.css'
 
 function GalleryList(props) {
-    console.log(props.pictures);
-
     return(
         <>
             <h1>Gallery List</h1>
+            <div className="picture-container">
             {props.pictures.map(pic => (
                 <GalleryItem 
                 key={pic.id}
@@ -16,7 +16,7 @@ function GalleryList(props) {
                 addLike={props.addLike}
                 />
             ))}
-            
+            </div>
         </>
     )
 }

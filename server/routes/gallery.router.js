@@ -9,7 +9,7 @@ const galleryItems = require('../modules/gallery.data');
 router.put('/:id', (req, res) => {
     console.log(req.params);
     const picId = req.params.id;
-    const sqlText = `UPDATE PICTURES SET likes = +1 WHERE id = $1`
+    const sqlText = `UPDATE PICTURES SET likes = likes + 1 WHERE id = $1`
     pool.query(sqlText, [picId])
     .then((response) => {
         console.log('added like');
@@ -22,7 +22,7 @@ router.put('/:id', (req, res) => {
 }); // END PUT Route
 
 router.get('/', (req, res) => {
-    const sqlText = `SELECT * FROM pictures`;
+    const sqlText = `SELECT * FROM pictures ORDER BY id`;
     pool.query(sqlText)
         .then((result) => {
             console.log(`Got pictures from the database`, result);
