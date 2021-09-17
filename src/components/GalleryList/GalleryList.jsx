@@ -4,7 +4,6 @@ import './GalleryList.css'
 function GalleryList(props) {
     return(
         <>
-            <h1>Gallery List</h1>
             <div className="picture-container">
             {props.pictures.map(pic => (
                 <GalleryItem 
