@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
-
+import InputForm from '../InputForm/InputForm.jsx'
 
 function App() {
   let [pictures, setPictures] = useState([]);
+  let [pathInput, setPathInput] = useState([]);
+  let [descriptionInput, setDescriptionInput] = useState([]);
 
   useEffect(() => {
     getPictures()
@@ -35,17 +37,21 @@ function App() {
   }
 
 
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        <GalleryList 
-          pictures={pictures}
-          addLike={addLike}
-        />
-      </div>
-    );
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1 className="App-title">Gallery of My Life</h1>
+      </header>
+      <InputForm 
+      setPathInput={setPathInput}
+      setDescriptionInput={setDescriptionInput}
+      />
+      <GalleryList 
+        pictures={pictures}
+        addLike={addLike}
+      />
+    </div>
+  );
 }
 
 export default App;
