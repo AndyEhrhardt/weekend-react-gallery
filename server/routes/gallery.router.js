@@ -3,9 +3,6 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 const galleryItems = require('../modules/gallery.data');
 
-// DO NOT MODIFY THIS FILE FOR BASE MODE
-
-// PUT Route
 router.put('/:id', (req, res) => {
     console.log(req.params);
     const picId = req.params.id;
@@ -19,7 +16,7 @@ router.put('/:id', (req, res) => {
         console.log(`error adding like with ${sqlText}`);
         res.sendStatus(500);
     })
-}); // END PUT Route
+}); 
 
 router.get('/', (req, res) => {
     const sqlText = `SELECT * FROM pictures ORDER BY id`;
@@ -34,7 +31,20 @@ router.get('/', (req, res) => {
         })
 })
 
-
+router.post('/', (req, res) => {
+    let picture = req.body;
+    const sqlText = `INSERT INTO pictures ("path", "description")
+    VALUES ($1, $2)`;
+    pool.query(sqlText, [picture.path, picture.description])
+    .then(() => {
+        console.log('Picture added to database', picture);
+        res.sendStatus(201);
+    })
+    .catch((error) => {
+        console.log('Error adding picture to database', error)
+        res.sendStatus(500)
+    })
+})  
 
 
 module.exports = router;
