@@ -7,7 +7,8 @@ function GalleryItem(props) {
         <>
             <div className="picture-like-container">
                 <div className="image-div">
-                    <img src={props.path} 
+                    <img key={props.id}
+                    src={props.path} 
                     onClick={() => clickCheck === 0 ? setClickCheck(1) : setClickCheck(0)}
                     className={clickCheck===0 ? "" : "grayed-out"}
                     ></img>
@@ -17,7 +18,7 @@ function GalleryItem(props) {
                 </div>
                 <div className="like-container">
                     <button onClick={() => props.addLike(props.id)}>Love It!</button>
-                    
+                    <button onClick={() => props.deletePicture(props.id)}>Delete</button>
                     
                     <p>{props.likes == 0 ? "Nobody loves this" : 
                     props.likes == 1 ? "One person loves this" : 

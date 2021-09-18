@@ -13,6 +13,7 @@ function GalleryList(props) {
                 description={pic.description}
                 likes={pic.likes}
                 addLike={props.addLike}
+                deletePicture={props.deletePicture}
                 />
             ))}
             </div>
