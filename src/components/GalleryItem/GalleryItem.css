@@ -1,5 +1,5 @@
 .picture-like-container{
-    width: auto;
+    width: 320px;
 }
 
 .image-div{
@@ -16,8 +16,8 @@
 }
 
 img{
-    width: 300px;
-    height: 300px;
+    width: 95%;
+    height: auto;
 }
 
 .grayed-out{

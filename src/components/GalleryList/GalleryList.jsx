@@ -8,7 +8,7 @@ function GalleryList(props) {
         <>
             <div className="picture-container">
                 {props.pictures.map(pic => (
-                    <Paper elevation={3}>
+                    <Paper elevation={6}>
                         <GalleryItem 
                             key={pic.id}
                             id={pic.id}
