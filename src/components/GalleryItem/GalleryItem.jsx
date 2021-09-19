@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './GalleryItem.css'
 import ReactDOM from 'react-dom';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 function GalleryItem(props) {
     let [clickCheck, setClickCheck] = useState(0);
@@ -28,16 +31,11 @@ function GalleryItem(props) {
                     onClick={() => props.addLike(props.id)}>
                         Love It!
                     </Button>
-                    <div>
-                    <Button variant="contained" color="primary" 
-                    sx={{
-                        width: 120,
-                        height: 20,
-                    }}
-                    onClick={() => props.deletePicture(props.id)}>
-                        Delete It!
-                    </Button>
-                    </div>
+                    <IconButton aria-label="delete"
+                        onClick={() => props.deletePicture(props.id)}
+                    >
+                        <DeleteIcon />
+                    </IconButton>
                     <p>{props.likes == 0 ? "Nobody loves this :(" : 
                     props.likes == 1 ? "One person loves this" : 
                     props.likes + " People love this"}</p>

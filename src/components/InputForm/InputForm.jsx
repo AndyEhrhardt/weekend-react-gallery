@@ -22,7 +22,7 @@ function InputForm(props){
                     value={props.descriptionInput}
                     onChange={(evt) => props.setDescriptionInput(evt.target.value)}
                 /> 
-                <Button variant="contained" color="primary" type="submit" 
+                <Button variant="contained" color="primary" type="submit"  
                 onClick={props.handleSubmit}>
                     Add Picture
                 </Button>

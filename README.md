@@ -1,6 +1,6 @@
 # Project Name
 
-Simple Photo Gallery App
+Photo Gallery App
 
 ## Description
 
