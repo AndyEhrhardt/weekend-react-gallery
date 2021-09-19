@@ -7,6 +7,10 @@ function GalleryList(props) {
     return(
         <>
             <div className="picture-container">
+                {/* The map function below passes in the information for each
+                picture into a GalleryItem component. In addition the relevant 
+                functions for adding a like and deleting a picture are passed through 
+                as well. */}
                 {props.pictures.map(pic => (
                     <Paper elevation={6}>
                         <GalleryItem 
