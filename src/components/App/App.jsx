@@ -80,6 +80,7 @@ function App() {
       setDescriptionInput={setDescriptionInput}
       handleSubmit={handleSubmit}
       />
+      <br></br>
       <GalleryList 
         pictures={pictures}
         addLike={addLike}

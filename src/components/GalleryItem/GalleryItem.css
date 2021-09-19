@@ -5,6 +5,7 @@
 .image-div{
     position: relative;
     text-align: center;
+    padding: 15px;
 }
 .imgText{
     position: absolute;
