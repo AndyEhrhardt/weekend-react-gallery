@@ -1,6 +1,7 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import './InputForm.css'
 
 function InputForm(props){  
     return(
@@ -12,19 +13,20 @@ function InputForm(props){
           }}
           onSubmit={() => {props.handleSubmit}}
         >
-     
-            <TextField id="standard-basic" label="File Name" variant="standard" 
-                value={props.fileNameInput}
-                onChange={(evt) => props.setFileNameInput(evt.target.value)}  
-            />
-            <TextField id="standard-basic" label="Description" variant="standard" 
-                value={props.descriptionInput}
-                onChange={(evt) => props.setDescriptionInput(evt.target.value)}
-            /> 
-            <Button variant="contained" color="primary" type="submit" onClick={props.handleSubmit}>
-                Add Picture
-            </Button>
-        
+            <div className="input-form">
+                <TextField id="standard-basic" label="File Name" variant="standard" 
+                    value={props.fileNameInput}
+                    onChange={(evt) => props.setFileNameInput(evt.target.value)}  
+                />
+                <TextField id="standard-basic" label="Description" variant="standard" 
+                    value={props.descriptionInput}
+                    onChange={(evt) => props.setDescriptionInput(evt.target.value)}
+                /> 
+                <Button variant="contained" color="primary" type="submit" 
+                onClick={props.handleSubmit}>
+                    Add Picture
+                </Button>
+            </div>
         </Box>
         </>
     )

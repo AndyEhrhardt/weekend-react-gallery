@@ -19,14 +19,26 @@ function GalleryItem(props) {
                     {clickCheck===0 ? "" : props.description}</p>
                 </div>
                 <div className="like-container">
-                    <Button variant="contained" color="primary" onClick={() => props.addLike(props.id)}>
+                    <Button variant="contained" color="primary" 
+                    sx={{
+                        width: 120,
+                        height: 20,
+                        margin: 1,
+                    }}
+                    onClick={() => props.addLike(props.id)}>
                         Love It!
                     </Button>
-                    <Button variant="contained" color="primary" onClick={() => props.deletePicture(props.id)}>
-                        Delete
+                    <div>
+                    <Button variant="contained" color="primary" 
+                    sx={{
+                        width: 120,
+                        height: 20,
+                    }}
+                    onClick={() => props.deletePicture(props.id)}>
+                        Delete It!
                     </Button>
-                    
-                    <p>{props.likes == 0 ? "Nobody loves this" : 
+                    </div>
+                    <p>{props.likes == 0 ? "Nobody loves this :(" : 
                     props.likes == 1 ? "One person loves this" : 
                     props.likes + " People love this"}</p>
                 </div>
