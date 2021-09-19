@@ -1,10 +1,12 @@
 .picture-like-container{
-    width: 200px;
+    width: 320px;
 }
 
 .image-div{
     position: relative;
     text-align: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
 .imgText{
     position: absolute;
@@ -14,7 +16,8 @@
 }
 
 img{
-    width: 100px;
+    width: 95%;
+    height: auto;
 }
 
 .grayed-out{
