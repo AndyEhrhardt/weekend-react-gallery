@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './GalleryItem.css'
+import ReactDOM from 'react-dom';
+import Button from '@mui/material/Button';
 
 function GalleryItem(props) {
     let [clickCheck, setClickCheck] = useState(0);
@@ -17,8 +19,12 @@ function GalleryItem(props) {
                     {clickCheck===0 ? "" : props.description}</p>
                 </div>
                 <div className="like-container">
-                    <button onClick={() => props.addLike(props.id)}>Love It!</button>
-                    <button onClick={() => props.deletePicture(props.id)}>Delete</button>
+                    <Button variant="contained" color="primary" onClick={() => props.addLike(props.id)}>
+                        Love It!
+                    </Button>
+                    <Button variant="contained" color="primary" onClick={() => props.deletePicture(props.id)}>
+                        Delete
+                    </Button>
                     
                     <p>{props.likes == 0 ? "Nobody loves this" : 
                     props.likes == 1 ? "One person loves this" : 
